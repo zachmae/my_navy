@@ -7,6 +7,8 @@
 
 # ///// C variable /////
 
+CC = gcc -o
+
 CFLAGS	+=	-Werror -Wextra -I./include
 
 # ///// Path /////
@@ -47,7 +49,7 @@ LIBFLAG	=	-L./sources/lib -lmy
 all: lib_include $(NAME)
 
 $(NAME): $(OBJ)
-	gcc -o $(NAME) $(OBJ) $(CFLAGS) $(LIBFLAG)
+	$(CC) $(NAME) $(OBJ) $(CFLAGS) $(LIBFLAG)
 
 lib_include:
 	@make -C $(SDIR)/lib/my
